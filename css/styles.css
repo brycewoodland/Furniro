@@ -27,10 +27,6 @@ ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-}
-
 /* ======================
   Navbar
    ====================*/
@@ -238,6 +234,7 @@ header {
   padding: 2rem 0 2rem 8rem;
   gap: 50px;
   position: relative;
+  margin-bottom: 100px;
 }
 
 .inspiration .inspiration-text {
@@ -294,10 +291,81 @@ header {
   color: var(--primary-color);
 }
 
+/* ======================
+  Share
+  ====================*/
+
+.gallery {
+  overflow: visible;
+  padding: 0 2rem; 
+}
+
+.share-gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.share-gallery-grid img {
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.gallery .gallery-top-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.gallery-top-left .img2 {
+  align-self: end;
+}
+
+.gallery-bottom-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.gallery-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.gallery-top-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.gallery-top-right .img6 {
+  align-self: end;
+}
+
+.gallery-bottom-right {
+  display: flex;
+  gap: 40px;  
+  margin-bottom: 20px;
+}
 
 /* Utility Classes */
 
 /* Container */
+.xxl-container {
+  max-width: 2000px;
+  margin-left: -155px;
+}
+
 .xl-container {
   max-width: 1300px;
   margin: 0 auto;
