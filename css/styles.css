@@ -191,6 +191,13 @@ header {
   cursor: pointer;
 }
 
+.show-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
 /* Utility Classes */
 
 /* Container */
@@ -289,4 +296,26 @@ header {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.show-more-btn {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  width: 245px;
+  height: 48px;
+}
+
+.show-more-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
 }
