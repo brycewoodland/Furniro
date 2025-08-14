@@ -292,7 +292,7 @@ header {
 }
 
 /* ======================
-  Share
+  Gallery
   ====================*/
 
 .gallery {
@@ -356,6 +356,102 @@ header {
   display: flex;
   gap: 40px;  
   margin-bottom: 20px;
+}
+
+/* ======================
+  Footer Styling
+======================*/
+footer {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 40px 20px 20px;
+  font-family: 'Arial', sans-serif;
+  border-top: 1px solid #D9D9D9;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: start; /* Aligns all columns to the top */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+.footer-grid h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.footer-grid .sm-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-grid ul li {
+  margin-bottom: 12px;
+}
+
+.footer-grid a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-grid a:hover {
+  color: var(--primary-color);
+}
+
+.newsletter input[type="search"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 240px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.newsletter a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter a:hover {
+  background-color: var(--light-accent);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #777;
 }
 
 /* Utility Classes */
