@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  --primary-color: #B88E2F;
+  --secondary-color: #FFF3E3;
+  --light-color: #F4F5F7;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ======================
+  Navbar
+   ====================*/
+
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1001;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .main-nav ul {
+  display: flex;
+  gap: 4rem;
+  margin: 0 auto;
+}
+
+.navbar .nav-icons a {
+  padding: 0 1rem;
+}
+
+.navbar .main-nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* ======================
+  Hero
+  ====================*/
+
+.hero {
+  background: url('../images/MaskGroup.jpg') no-repeat;
+  background-size: cover;
+  height: 700px;
+}
+
+/* ======================
+  Group 115
+  ====================*/
+
+.group-115 {
+  margin-top: 100px;
+}
+
+.group-115 .group-115-body.group-115-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+.group-115 .group-115-body .card {
+  margin-top: 100px;
+}
+
+/* ======================
+  Products
+  ====================*/
+
+.product .product-body.product-body-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 40px 0;
+  place-items: center;
+  place-content: space-around;
+  row-gap: 30px;
+}
+
+.product .product-body .product-card-description {
+  background: var(--light-color);
+  width: 285px;
+  margin: -10px auto;
+  padding: 20px;
+}
+
+.product .product-body .card-body {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product .product-body .card-body p:last-child:nth-of-type(2) {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.product .product-body .product-card .card-header h4,
+.product .product-body .product-card .card-body p {
+  font-weight: bold;
+}
+
+.product .product-body .product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.product .product-body .product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(128, 128, 128, 0.7);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.product .product-body .product-card:hover::after {
+  opacity: 1;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.product-card:hover .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.add-to-cart {
+  padding: 0.7rem 2rem;
+  background: white;
+  color: var(--primary-color);
+  border: none;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.overlay-icons {
+  display: flex;
+  gap: 1rem;
+  z-index: 1000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Utility Classes */
+
+/* Container */
+.xl-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.lg-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text Classes */
+.xxl-text {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 50px;
+}
+
+.xl-text {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 30px;
+}
+
+.lg-text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 30px;
+}
+
+.md-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+.sm-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.xs-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Discount Badge */
+.product-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #E97171;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.new-badge {
+  position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #2EC1AC;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
