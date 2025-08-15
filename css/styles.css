@@ -240,8 +240,9 @@ header {
  background: var(--secondary-color); 
  padding: 2rem 0 2rem 8rem;
  gap: 50px;
- position: relative;
  margin-bottom: 100px;
+ overflow: hidden;
+ height: 670px;
 }
 
 .inspiration .inspiration-text {
