@@ -721,14 +721,9 @@ footer {
 /* Mobile screens (e.g., up to 767px) */
 @media (max-width: 767px) {
 
-  header {
-    position: relative;
-  }
-
   .navbar {
     justify-content: center;
     align-items: center;
-    position: sticky;
   }
 
   .navbar .nav-icons a {
@@ -764,10 +759,6 @@ footer {
     flex-basis: 100%;
     text-align: center;
     padding: 10px 0;
-  }
-
-  header {
-    position: relative;
   }
 
   .hamburger-menu {
