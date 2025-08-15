@@ -37,10 +37,8 @@ const updateActiveCard = () => {
 
   const firstCard = cards[0];
   firstCard.classList.add('active');
-
   const desc = firstCard.querySelector('.card-description');
   const btn = firstCard.querySelector('.next-btn');
-
   if (desc) desc.classList.add('active');
   if (btn) btn.classList.add('active');
 };
@@ -49,7 +47,8 @@ arrow.addEventListener('click', () => {
   track.style.transition = 'transform 0.5s ease-in-out';
   track.style.transform = `translateX(-${slideAmount}px)`;
 
-  setTimeout(() => {
+  track.addEventListener('transitionend', () => {
+
     track.style.transition = 'none';
 
     const firstCard = track.children[0];
@@ -58,10 +57,9 @@ arrow.addEventListener('click', () => {
     track.style.transform = 'translateX(0)';
 
     cards = document.querySelectorAll('.card-inspiration');
-
     updateActiveCard();
-  }, 300);
+
+  }, { once: true });
 });
 
 updateActiveCard();
-
