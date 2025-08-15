@@ -1,7 +1,7 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -29,7 +29,7 @@ ul {
 
 /* ======================
   Navbar
-   ====================*/
+  ====================*/
 
 header {
   position: sticky;
@@ -248,30 +248,65 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 420px;
 }
 
-.inspiration .card-slider {
-  display: flex;
+.card-slider {
   overflow: hidden;
+  width: 1000px; /* or 100% */
   position: relative;
-  width: 1000px;
+}
+
+.card-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   gap: 40px;
 }
 
-.inspiration .card-inspiration {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+.card-inspiration {
+  min-width: 400px;
+  flex-shrink: 0;
 }
 
-.inspiration .inspiration-text {
-  width: 420px;
+.card-inspiration {
+  width: 372px;
+  height: 486px;
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
+
+.card-inspiration.active {
+  width: 404px;
+  height: 582px;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card-inspiration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: width 0.5s ease, height 0.5s ease;
+  margin-right: 10px;
+}
+
+/* .card-inspiration img {
+  object-fit: cover;
+  transition: inherit;
+} */
 
 .inspiration .card-inspiration {
   position: relative;
 }
 
 .inspiration .card-description {
+  display: none;
+}
+
+.inspiration .card-description.active {
+  display: block;
   background: rgba(255, 255, 255, 0.7);
   width: 217px;
   height: 120px;
@@ -279,9 +314,16 @@ header {
   position: absolute;
   bottom: 10%;
   left: 10%;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .inspiration .next-btn {
+  display: none;
+}
+
+.inspiration .next-btn.active {
+  display: inline-block;
   background: var(--primary-color);
   color: #fff;
   padding: 0.75rem;
@@ -291,11 +333,35 @@ header {
   width: 48px;
   height: 48px;
   text-align: center;
-}
+} 
 
-.inspiration .next-btn:hover {
+.inspiration .next-btn.active:hover {
   background: var(--light-accent);
   color: var(--primary-color);
+}
+
+.arrow-badge {
+  position: absolute;
+  top: 40%;
+  right: 12%;
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.arrow-badge:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
 }
 
 /* ======================
@@ -304,7 +370,7 @@ header {
 
 .gallery {
   overflow: visible;
-  padding: 0 2rem; 
+  padding: 0 2rem;
 }
 
 .share-gallery-grid {
@@ -361,7 +427,7 @@ header {
 
 .gallery-bottom-right {
   display: flex;
-  gap: 40px;  
+  gap: 40px;
   margin-bottom: 20px;
 }
 
@@ -379,7 +445,7 @@ footer {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  align-items: start; /* Aligns all columns to the top */
+  align-items: start;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -394,7 +460,6 @@ footer {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-
 
 .footer-grid h1 {
   font-size: 24px;
@@ -528,8 +593,8 @@ footer {
 
 /* Discount Badge */
 .product-card {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .discount-badge {
@@ -564,29 +629,6 @@ footer {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-.arrow-badge {
-  position: absolute;
-  top: 40%;
-  right: 12%;;
-  background-color: var(--light-color);
-  color: var(--primary-color);
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: 50%;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 4px 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.5);
-  cursor: pointer;
-}
-
-.arrow-badge:hover {
-  background: var(--primary-color);
-  color: var(--light-color);
 }
 
 /* Buttons */
@@ -634,22 +676,22 @@ footer {
   .navbar .main-nav ul {
     gap: 2rem;
   }
-  
+
   .hero {
     background-attachment: scroll;
     height: 500px;
   }
-  
+
   .hero .call-to-action {
     width: 450px;
     height: 350px;
     padding: 1.5rem;
   }
-  
+
   .xxl-text {
     font-size: 2.5rem;
   }
-  
+
   .xl-container {
     max-width: 90%;
   }
@@ -657,7 +699,7 @@ footer {
   .lg-container {
     max-width: 90%;
   }
-  
+
   .group-115 .group-115-body.group-115-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -665,7 +707,7 @@ footer {
   .product .product-body.product-body-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .inspiration {
     padding: 2rem;
     flex-direction: column;
@@ -675,11 +717,11 @@ footer {
     width: 100%;
     text-align: center;
   }
-  
+
   .inspiration .card-slider {
     width: 100%;
   }
-  
+
   .inspiration .card-slider .card-inspiration {
     display: none;
   }
@@ -692,7 +734,7 @@ footer {
   .inspiration .card-description {
     width: 90%;
   }
-  
+
   .inspiration .next-btn {
     left: 80%;
   }
@@ -700,15 +742,18 @@ footer {
   .share-gallery-grid {
     grid-template-columns: 1fr;
   }
-  
-  .gallery-top-left, .gallery-bottom-left, .gallery-top-right, .gallery-bottom-right {
+
+  .gallery-top-left,
+  .gallery-bottom-left,
+  .gallery-top-right,
+  .gallery-bottom-right {
     gap: 10px;
   }
-  
+
   .gallery-top-right .img6 {
     align-self: flex-start;
   }
-  
+
   .gallery-top-left .img2 {
     align-self: flex-end;
   }
@@ -720,7 +765,6 @@ footer {
 
 /* Mobile screens (e.g., up to 767px) */
 @media (max-width: 767px) {
-
   .navbar {
     justify-content: center;
     align-items: center;
@@ -730,19 +774,19 @@ footer {
     padding: 0 5px;
   }
 
-  .navbar .nav-icons a:last-child i{
+  .navbar .nav-icons a:last-child i {
     margin-right: 1.5em;
   }
-  
+
   .navbar .main-nav {
-    display: none; 
+    display: none;
   }
 
   .navbar .main-nav.open {
     display: block;
   }
 
-  .navbar .main-nav.open ul{
+  .navbar .main-nav.open ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -827,11 +871,11 @@ footer {
   .xl-text {
     font-size: 1.8rem;
   }
-  
+
   .group-115 .group-115-body.group-115-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .product .product-body.product-body-grid {
     grid-template-columns: 1fr;
   }
@@ -839,7 +883,7 @@ footer {
   .inspiration {
     padding: 1rem;
   }
-  
+
   .inspiration .card-slider {
     flex-direction: column;
     align-items: center;
@@ -852,16 +896,20 @@ footer {
   .inspiration .card-inspiration {
     width: 90%;
   }
-  
+
   .inspiration .next-btn {
     left: 70%;
   }
-  
+
   .share-gallery-grid {
     gap: 5px;
   }
-  
-  .gallery-center, .gallery-top-left, .gallery-bottom-left, .gallery-top-right, .gallery-bottom-right {
+
+  .gallery-center,
+  .gallery-top-left,
+  .gallery-bottom-left,
+  .gallery-top-right,
+  .gallery-bottom-right {
     display: none;
     overflow: hidden;
   }
