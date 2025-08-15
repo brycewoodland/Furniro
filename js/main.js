@@ -28,16 +28,13 @@ navLinks.forEach(link => {
 const track = document.querySelector('.card-track');
 let cards = document.querySelectorAll('.card-inspiration');
 const arrow = document.querySelector('.arrow-badge');
-const slideAmount = cards[0].offsetWidth + 40; // 40 is the gap
+const slideAmount = cards[0].offsetWidth + 40;
 
-// === Utility to update the active card's child elements ===
 const updateActiveCard = () => {
-  // Remove all active classes
   document.querySelectorAll('.card-description').forEach(desc => desc.classList.remove('active'));
   document.querySelectorAll('.next-btn').forEach(btn => btn.classList.remove('active'));
   cards.forEach(card => card.classList.remove('active'));
 
-  // First visible card
   const firstCard = cards[0];
   firstCard.classList.add('active');
 
@@ -48,30 +45,23 @@ const updateActiveCard = () => {
   if (btn) btn.classList.add('active');
 };
 
-// === Click handler for infinite wrap effect ===
 arrow.addEventListener('click', () => {
-  // Slide left
   track.style.transition = 'transform 0.5s ease-in-out';
   track.style.transform = `translateX(-${slideAmount}px)`;
 
-  // After animation: rotate DOM
   setTimeout(() => {
     track.style.transition = 'none';
 
     const firstCard = track.children[0];
     track.appendChild(firstCard);
 
-    // Reset transform (because card is now at the end)
     track.style.transform = 'translateX(0)';
 
-    // Update card list
     cards = document.querySelectorAll('.card-inspiration');
 
-    // Update active states
     updateActiveCard();
-  }, 500); // match CSS transition duration
+  }, 300);
 });
 
-// === Init ===
 updateActiveCard();
 
