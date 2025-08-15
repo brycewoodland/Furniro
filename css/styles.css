@@ -232,129 +232,129 @@ header {
 }
 
 /* ======================
-  Inspiration
-  ====================*/
+  Inspiration
+  ====================*/
 
 .inspiration {
-  display: flex;
-  background: var(--secondary-color);
-  padding: 2rem 0 2rem 8rem;
-  gap: 50px;
-  position: relative;
-  margin-bottom: 100px;
+ display: flex; 
+ background: var(--secondary-color); 
+ padding: 2rem 0 2rem 8rem;
+ gap: 50px;
+ position: relative;
+ margin-bottom: 100px;
 }
 
 .inspiration .inspiration-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 420px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ width: 420px;
 }
 
 .card-slider {
-  overflow: hidden;
-  width: 1000px;
-  position: relative;
+ overflow: hidden;
+ width: 1000px;
+ position: relative;
 }
 
 .card-track {
-  display: flex;
-  transition: transform 0.7s ease-in-out;
-  gap: 40px;
+ display: flex;
+ transition: transform 0.7s ease-in-out;
+ gap: 40px;
 }
 
 .card-inspiration {
-  width: 372px;
-  height: 486px;
-  transition: all 0.5s ease-in-out;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
+ width: 372px;
+ height: 486px;
+ transition: all 0.5s ease-in-out;
+ flex-shrink: 0;
+ position: relative;
+ overflow: hidden;
 }
 
 .card-inspiration.active {
-  width: 404px;
-  height: 582px;
-  transform: scale(1.05);
-  z-index: 10;
+ width: 404px;
+ height: 582px;
+ transform: scale(1.05);
+ z-index: 10;
 }
 
 .card-inspiration img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.5s ease-in-out;
-  margin-right: 10px;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ transition: all 0.5s ease-in-out;
+ margin-right: 10px;
 }
 
 .inspiration .card-description {
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+ opacity: 0;
+ transform: translateY(50px);
+ pointer-events: none;
+ transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .inspiration .card-description.active {
-  opacity: 1;
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.7);
-  width: 217px;
-  height: 120px;
-  padding: 1rem;
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
+ opacity: 1;
+ transform: translateY(0);
+ background: rgba(255, 255, 255, 0.7);
+ width: 217px;
+ height: 120px;
+ padding: 1rem;
+ position: absolute;
+ bottom: 10%;
+ left: 10%;
 }
 
 .inspiration .next-btn {
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+ opacity: 0;
+ transform: translateY(50px);
+ pointer-events: none;
+ transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .inspiration .next-btn.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 0.75rem;
-  position: absolute;
-  bottom: 10%;
-  left: 64%;
-  width: 48px;
-  height: 48px;
-  text-align: center;
+ opacity: 1;
+ transform: translateY(0);
+ pointer-events: auto;
+ background: var(--primary-color);
+ color: #fff;
+ padding: 0.75rem;
+ position: absolute;
+ bottom: 10%;
+ left: 64%;
+ width: 48px;
+ height: 48px;
+ text-align: center;
 }
 
 .inspiration .next-btn.active:hover {
-  background: var(--light-accent);
-  color: var(--primary-color);
+ background: var(--light-accent);
+ color: var(--primary-color);
 }
 
 .arrow-badge {
-  position: absolute;
-  top: 40%;
-  right: 12%;
-  background-color: var(--light-color);
-  color: var(--primary-color);
-  font-size: 0.875rem;
-  font-weight: 600;
-  border-radius: 50%;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 4px 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.5);
-  cursor: pointer;
-  z-index: 1000;
+ position: absolute;
+ top: 40%;
+ right: 12%;
+ background-color: var(--light-color);
+ color: var(--primary-color);
+ font-size: 0.875rem;
+ font-weight: 600;
+ border-radius: 50%;
+ width: 2.8rem;
+ height: 2.8rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 4px 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+ cursor: pointer;
+ z-index: 1000;
 }
 
 .arrow-badge:hover {
-  background: var(--primary-color);
-  color: var(--light-color);
+ background: var(--primary-color);
+ color: var(--light-color);
 }
 
 /* ======================
