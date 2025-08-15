@@ -780,7 +780,7 @@ footer {
   }
 
   .hamburger-menu.open {
-    position: fixed;
+    position: absolute;
     color: #333;
     top: 20px;
     right: 0;
