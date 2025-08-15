@@ -505,7 +505,7 @@ footer {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .xs-text {
@@ -798,5 +798,9 @@ footer {
 
   .newsletter a {
     width: 100%;
+  }
+
+  .btn-primary {
+    margin: auto;
   }
 }
