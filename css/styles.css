@@ -721,16 +721,22 @@ footer {
 /* Mobile screens (e.g., up to 767px) */
 @media (max-width: 767px) {
 
+  header {
+    position: relative;
+  }
+
   .navbar {
     justify-content: center;
+    align-items: center;
+    position: sticky;
   }
 
   .navbar .nav-icons a {
-    padding: 0 0.5rem;
+    padding: 0 5px;
   }
 
   .navbar .nav-icons a:last-child i{
-    margin-right: 2em;
+    margin-right: 1.5em;
   }
   
   .navbar .main-nav {
@@ -748,7 +754,8 @@ footer {
     padding: 1rem;
     position: fixed;
     right: 0;
-    width: 50%;
+    top: 10%;
+    width: 100%;
     background: #fff;
     z-index: 999;
   }
@@ -764,9 +771,9 @@ footer {
   }
 
   .hamburger-menu {
-    position: fixed;
+    position: absolute;
     top: 20px;
-    right: 10px;
+    right: 0;
     display: block;
     cursor: pointer;
     z-index: 1000;
@@ -879,5 +886,9 @@ footer {
 
   .btn-primary {
     margin: auto;
+  }
+
+  .no-scroll {
+    overflow: hidden;
   }
 }
