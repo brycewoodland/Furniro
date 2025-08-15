@@ -749,7 +749,7 @@ footer {
     padding: 1rem;
     position: fixed;
     right: 0;
-    top: 10%;
+    top: 8%;
     width: 100%;
     background: #fff;
     z-index: 999;
@@ -764,7 +764,7 @@ footer {
   .hamburger-menu {
     position: absolute;
     top: 20px;
-    right: 0;
+    right: 5px;
     display: block;
     cursor: pointer;
     z-index: 1000;
@@ -774,7 +774,7 @@ footer {
     position: absolute;
     color: #333;
     top: 20px;
-    right: 0;
+    right: 5px;
     z-index: 9999;
   }
 
