@@ -67,6 +67,10 @@ header {
   padding: 0 1rem;
 }
 
+.navbar .nav-icons i:hover {
+  color: var(--primary-color);
+}
+
 .navbar .main-nav ul li a:hover {
   color: var(--primary-color);
 }
