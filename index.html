@@ -24,7 +24,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <script src="js/main.js" defer></script>
   </head>
   <body cl>
@@ -44,9 +44,23 @@
         <div class="main-nav">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
+            <li class="dropdown">
+              <a href="#">Products <span class="dropdown-arrow">&#x25BE;</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All Products</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Sales</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#">Rooms <span class="dropdown-arrow">&#x25BE;</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All Rooms</a></li>
+                <li><a href="#">Bedroom</a></li>
+                <li><a href="#">Kitchen</a></li>
+                <li><a href="#">Living Room</a></li>
+              </ul>
+            </li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
           </ul>
         </div>
         <div class="nav-icons">
@@ -347,7 +361,7 @@
             </div>
           </div>
         </div>
-        <div class="arrow-badge"> &#707; </div>
+        <div class="arrow-badge">&#707;</div>
       </div>
     </section>
 
