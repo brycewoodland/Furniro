@@ -63,3 +63,123 @@ arrow.addEventListener('click', () => {
 });
 
 updateActiveCard();
+
+
+// Fetch from Go RESTful API
+const fetchProducts = async () => {
+  try {
+    const response = await fetch('https://furniro-backend-j6eb.onrender.com/api/products');
+
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+
+    const data = await response.json();
+    console.log("Fetched products:", data);
+    displayProducts(data);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+  }
+}
+
+// Map product IDS to image paths
+const productImagesMap = {
+  "1": "images/Images(1).png",
+  "2": "images/Images(6).png",
+  "3": "images/image 3.png",
+  "4": "images/image 4.png",
+  "5": "images/Images(2).png",
+  "6": "images/Images(3).png",
+  "7": "images/Images(4).png",
+  "8": "images/Images(5).png"
+};
+
+// Display the Product data
+const displayProducts = (products) => {
+  const productListDiv = document.querySelector('.product-body-grid');
+  if (!productListDiv) return;
+
+  productListDiv.textContent = ''; // clear old cards
+
+  products.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    // Product image
+    const imgEl = document.createElement('img');
+    imgEl.src = productImagesMap[product.id] || "images/default.png"; // fallback
+    imgEl.alt = product.title;
+    imgEl.loading = "lazy";
+    productCard.appendChild(imgEl);
+
+    // Hover overlay
+    const overlay = document.createElement('div');
+    overlay.classList.add('card-overlay');
+    overlay.innerHTML = `
+      <button class="add-to-cart">Add to cart</button>
+      <div class="overlay-icons">
+        <i class="fa-solid fa-share-nodes" title="Share"></i>
+        <i class="fa-solid fa-arrow-right-arrow-left" title="Compare"></i>
+        <i class="fa-solid fa-heart" title="Like"></i>
+      </div>
+    `;
+    productCard.appendChild(overlay);
+
+    // --- Dynamic badges ---
+    if (product.discount) {
+      const discountBadge = document.createElement('div');
+      discountBadge.classList.add('discount-badge');
+      discountBadge.textContent = product.discount;
+      productCard.appendChild(discountBadge);
+    }
+
+    if (product.isNew) {
+      const newBadge = document.createElement('div');
+      newBadge.classList.add('new-badge');
+      newBadge.textContent = "New";
+      productCard.appendChild(newBadge);
+    }
+
+    // --- Product description ---
+    const descBlock = document.createElement('div');
+    descBlock.classList.add('product-card-description');
+
+    const cardHeader = document.createElement('div');
+    cardHeader.classList.add('card-header');
+
+    const titleEl = document.createElement('h4');
+    titleEl.classList.add('sm-text');
+    titleEl.textContent = product.title;
+    cardHeader.appendChild(titleEl);
+
+    const subtitleEl = document.createElement('p');
+    subtitleEl.classList.add('xs-text');
+    subtitleEl.textContent = product.description;
+    cardHeader.appendChild(subtitleEl);
+
+    descBlock.appendChild(cardHeader);
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    const priceEl = document.createElement('p');
+    priceEl.classList.add('xs-text');
+    priceEl.textContent = `Rp ${product.price.toLocaleString("id-ID")}`;
+    cardBody.appendChild(priceEl);
+
+    if (product.discount) {
+      const originalPrice = document.createElement('p');
+      originalPrice.classList.add('xs-text');
+      originalPrice.style.textDecoration = "line-through";
+      originalPrice.textContent = `Rp ${(product.price * 1.4).toLocaleString("id-ID")}`;
+      cardBody.appendChild(originalPrice);
+    }
+
+    descBlock.appendChild(cardBody);
+    productCard.appendChild(descBlock);
+
+    productListDiv.appendChild(productCard);
+  });
+};
+
+fetchProducts();
