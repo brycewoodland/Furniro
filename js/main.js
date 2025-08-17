@@ -84,14 +84,14 @@ const fetchProducts = async () => {
 
 // Map product IDS to image paths
 const productImagesMap = {
-  "1": "images/Images(1).png",
-  "2": "images/Images(6).png",
-  "3": "images/image 3.png",
-  "4": "images/image 4.png",
-  "5": "images/Images(2).png",
-  "6": "images/Images(3).png",
-  "7": "images/Images(4).png",
-  "8": "images/Images(5).png"
+  "1": "images/Images(1).webp",
+  "2": "images/Images(6).webp",
+  "3": "images/image 3.webp",
+  "4": "images/image 4.webp",
+  "5": "images/Images(2).webp",
+  "6": "images/Images(3).webp",
+  "7": "images/Images(4).webp",
+  "8": "images/Images(5).webp"
 };
 
 // Display the Product data
